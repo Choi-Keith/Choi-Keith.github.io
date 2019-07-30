@@ -101,18 +101,18 @@
   };
 </script>
 
-  <meta name="description" content="1.mysql开始使用1.1 mysql的登录命令如下mysql -h localhost -r root -p提示 mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码 1.2 mysql已存在的数据库：information_scheme: 存储元">
-<meta name="keywords" content="数据库">
+  <meta name="description" content="1.String、StringBuffer和StringBuilder有什么区别 String和StringBuffer、StringBuilder的区别在于String声明的是不可变的对象，每次操作都会生成新的String对象，然后将指针指向新的String对象，例如： 12String s = &amp;quot;jvm&amp;quot;;s += 890;  Jvm解析：首先创建对象s指向字符常量池”jv">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库之SQL语法">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/SQL语法/index.html">
+<meta property="og:title" content="java基础一">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/java基础一/index.html">
 <meta property="og:site_name" content="Keith&#39;Blog">
-<meta property="og:description" content="1.mysql开始使用1.1 mysql的登录命令如下mysql -h localhost -r root -p提示 mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码 1.2 mysql已存在的数据库：information_scheme: 存储元">
+<meta property="og:description" content="1.String、StringBuffer和StringBuilder有什么区别 String和StringBuffer、StringBuilder的区别在于String声明的是不可变的对象，每次操作都会生成新的String对象，然后将指针指向新的String对象，例如： 12String s = &amp;quot;jvm&amp;quot;;s += 890;  Jvm解析：首先创建对象s指向字符常量池”jv">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T17:06:10.618Z">
+<meta property="og:updated_time" content="2019-07-30T06:50:41.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库之SQL语法">
-<meta name="twitter:description" content="1.mysql开始使用1.1 mysql的登录命令如下mysql -h localhost -r root -p提示 mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码 1.2 mysql已存在的数据库：information_scheme: 存储元">
+<meta name="twitter:title" content="java基础一">
+<meta name="twitter:description" content="1.String、StringBuffer和StringBuilder有什么区别 String和StringBuffer、StringBuilder的区别在于String声明的是不可变的对象，每次操作都会生成新的String对象，然后将指针指向新的String对象，例如： 12String s = &amp;quot;jvm&amp;quot;;s += 890;  Jvm解析：首先创建对象s指向字符常量池”jv">
 
 
 
@@ -120,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/24/SQL语法/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/30/java基础一/">
 
 
 
@@ -131,7 +131,7 @@
 </script>
 
   
-  <title>数据库之SQL语法 | Keith'Blog</title>
+  <title>java基础一 | Keith'Blog</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/SQL语法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/java基础一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="keith choi">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据库之SQL语法
+          <h1 class="post-title" itemprop="name headline">java基础一
 
               
             
@@ -394,23 +394,13 @@
                 
               
 
-              <time title="创建时间：2019-07-24 23:21:06" itemprop="dateCreated datePublished" datetime="2019-07-24T23:21:06+08:00">2019-07-24</time>
+              <time title="创建时间：2019-07-30 13:16:37 / 修改时间：14:50:41" itemprop="dateCreated datePublished" datetime="2019-07-30T13:16:37+08:00">2019-07-30</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-30 01:06:10" itemprop="dateModified" datetime="2019-07-30T01:06:10+08:00">2019-07-30</time>
-              </span>
             
           
 
@@ -423,7 +413,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -438,7 +428,7 @@
 
           
           
-            <span id="/2019/07/24/SQL语法/" class="post-meta-item leancloud_visitors" data-flag-title="数据库之SQL语法">
+            <span id="/2019/07/30/java基础一/" class="post-meta-item leancloud_visitors" data-flag-title="java基础一">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -473,182 +463,31 @@
       
 
       
-        <h2 id="1-mysql开始使用"><a href="#1-mysql开始使用" class="headerlink" title="1.mysql开始使用"></a>1.mysql开始使用</h2><h4 id="1-1-mysql的登录命令如下"><a href="#1-1-mysql的登录命令如下" class="headerlink" title="1.1 mysql的登录命令如下"></a>1.1 mysql的登录命令如下</h4><p><code>mysql -h localhost -r root -p</code><br><strong>提示</strong> mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码</p>
-<h4 id="1-2-mysql已存在的数据库："><a href="#1-2-mysql已存在的数据库：" class="headerlink" title="1.2 mysql已存在的数据库："></a>1.2 mysql已存在的数据库：</h4><p><strong>information_scheme</strong>: 存储元数据库，数据库对象信息，如用户信息，列信息，字符，分区等<br><strong>performance_sheme</strong>: 存储数据库服务性能参数<br><strong>mysql</strong>: 存储数据库用户权限信息<br><strong>sys</strong>: 能够快速获取谁用了多少资源，有谁连接过</p>
-<h4 id="1-3-存储引擎分类"><a href="#1-3-存储引擎分类" class="headerlink" title="1.3 存储引擎分类"></a>1.3 存储引擎分类</h4><p><strong>MyISAM</strong>: MyISAM拥有较高的插入、查询速度，但不支持事务，常用在web、数据仓储和其他应用环境下最常使用的存储引擎之一，在mysql5.5之前的版本中作为默认存储引擎。<br><strong>INNODB</strong>: InnerDB是事务型数据库的首选引擎，支持事务安全表，支持行锁定和外键，是mysql5.5之后的默认存储引擎。<br><strong>MEMORY</strong>: 内存型，访问速度非常快，但是不安全。</p>
-<h2 id="2-有关数据库的一些概念"><a href="#2-有关数据库的一些概念" class="headerlink" title="2.有关数据库的一些概念"></a>2.有关数据库的一些概念</h2><h2 id="3-逻辑模型的结构分类"><a href="#3-逻辑模型的结构分类" class="headerlink" title="3.逻辑模型的结构分类"></a>3.逻辑模型的结构分类</h2><p><strong>3.1层次模型</strong>：层次模型是用属性结构来表示各类实体以及实体之间的联系。<br><strong>3.2网状模型</strong>: 网状模型是用图形结构来表示各类实体以及实体之间的联系。<br><strong>3.3关系模型</strong>: 关系模型是用二维表结构来表示各类实体以及实体之间的联系。<br><strong>3.4面向对象模型</strong>：面向对象模型是用面向对象的观点来描述现实世界实体(对象)的逻辑组织、对象间相知和联系的模型。   </p>
-<h2 id="4-关系模型中的常见术语"><a href="#4-关系模型中的常见术语" class="headerlink" title="4.关系模型中的常见术语"></a>4.关系模型中的常见术语</h2><p><strong>关系</strong>：对应通常所说的一张表。<br><strong>元组</strong>：表中的一行即为一个元组。<br><strong>属性</strong>: 表中的一列即为一个属性。<br><strong>主键</strong>：表中的某个属性组，它可以唯一确定一个元组。<br><strong>域</strong>：列的取值范围成为域。<br><strong>分量</strong>：元组中的一个属性值。<br><strong>关系模式</strong>：对关系中的描述。</p>
-<p><strong>键的分类</strong>：   </p>
-<ul>
-<li>超键：在一个关系中，能唯一标识元组的属性或属性集称为关系的超键。</li>
-<li>候选键：如果一个属性集能唯一标识元组，且又不含有多余的属性，那么这个键称为关系的候选键。</li>
-<li>主键：如果一个关系中有多个候选键，则选择其中的一个键为关系的主键。</li>
-<li>外键： 如果一个关系表R中包含另一个关系表S的主键所对应的属性组F，则称此属性组F为关系表R的外键，并称关系表S为参照建，关系表R是依赖关系。</li>
-</ul>
-<h2 id="5-mysql数据类型"><a href="#5-mysql数据类型" class="headerlink" title="5.mysql数据类型"></a>5.mysql数据类型</h2><h4 id="5-1整数数据类型"><a href="#5-1整数数据类型" class="headerlink" title="5.1整数数据类型"></a>5.1整数数据类型</h4><table>
-<thead>
-<tr>
-<th align="left"><strong>数据类型</strong></th>
-<th align="left"><strong>字节数</strong></th>
-<th align="left"><strong>有符号数取值范围</strong></th>
-<th align="left"><strong>无符号数取值范围</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">TINYINT</td>
-<td align="left">1个字节</td>
-<td align="left">-128~127</td>
-<td align="left">0~256</td>
-</tr>
-<tr>
-<td align="left">SMALLINT</td>
-<td align="left">2个字节</td>
-<td align="left">-32768~32767</td>
-<td align="left">0~65535</td>
-</tr>
-<tr>
-<td align="left">MEDIUMINT</td>
-<td align="left">3个字节</td>
-<td align="left">-8388608~8388607</td>
-<td align="left">0~16777215</td>
-</tr>
-<tr>
-<td align="left">INT</td>
-<td align="left">4个字节</td>
-<td align="left">-2147483648~214783647</td>
-<td align="left">0~4294967295</td>
-</tr>
-<tr>
-<td align="left">BIGINT</td>
-<td align="left">5个字节</td>
-<td align="left">-9223372036854775808~9223372036854775807</td>
-<td align="left">0~18446744073709551615</td>
-</tr>
-</tbody></table>
-<p><strong>提示</strong>：mysql支持在类型后面的括号指定该类型的显示宽度，例如INT(M)进行设置，其中M指示最大显示宽度<br><strong>注意</strong>：显示宽度与存储数据的大小无关。数值的个数如果小于指定的宽度是，显示会由空格填充；如果插入了大于显示宽度的值，只要该值不超过该类型整数的取值范围，数据依然可以插入，而且还准确无误。</p>
-<h4 id="5-2浮点数类型"><a href="#5-2浮点数类型" class="headerlink" title="5.2浮点数类型"></a>5.2浮点数类型</h4><table>
-<thead>
-<tr>
-<th align="left"><strong>类型名称</strong></th>
-<th align="left"><strong>字节数</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">FLOAT</td>
-<td align="left">4个字节</td>
-</tr>
-<tr>
-<td align="left">DOUBLE</td>
-<td align="left">8个字节</td>
-</tr>
-<tr>
-<td align="left">DECIMAL(M, D),DEC</td>
-<td align="left">M+2个字节</td>
-</tr>
-</tbody></table>
-<p><strong>提示</strong>：(M, D)，M表示总共的位数，D表示小数的位数，默认M值为10， D值为0；它的最大取值范围不是固定的，而是由M来决定的。<br><strong>注意</strong>：数据库一般用DECIMAL来存储数据，因为浮点数在进行加减法运算和比较的时候很容易出现精度问题</p>
-<h4 id="5-3字符串类型"><a href="#5-3字符串类型" class="headerlink" title="5.3字符串类型"></a>5.3字符串类型</h4><table>
-<thead>
-<tr>
-<th align="left"><strong>类型名称</strong></th>
-<th align="left"><strong>字符长度</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">CHAR</td>
-<td align="left">0~255个字符</td>
-</tr>
-<tr>
-<td align="left">VARCHAR</td>
-<td align="left">0~65535个字符</td>
-</tr>
-<tr>
-<td align="left">TINYTEXT</td>
-<td align="left">(2^8 - 1)个字符</td>
-</tr>
-<tr>
-<td align="left">TEXT</td>
-<td align="left">(2^16 - 1)个字符</td>
-</tr>
-<tr>
-<td align="left">MEDIUMTEXT</td>
-<td align="left">(2^24 - 1)个字符</td>
-</tr>
-<tr>
-<td align="left">LONGTEXT</td>
-<td align="left">(2^32 - 1)个字符</td>
-</tr>
-<tr>
-<td align="left">SET</td>
-<td align="left">set最大可以由64个成员</td>
-</tr>
-</tbody></table>
-<p><strong>提示</strong>：CHAR和VARCHAR的区别<br>char: char为固定长度，在定义时指定字符串长度，如果输入的字符数小于指定的字符数，则系统会自动在左边用空格补全，它的存储长度在定义时就已经固定下来了。<br>varchar: varchar的长度时可变的，在定义的范围内，输入多少个字符，它就有多少个字符。它的存储长度是在输入时固定下来的。</p>
-<h4 id="5-4日期与时间类型"><a href="#5-4日期与时间类型" class="headerlink" title="5.4日期与时间类型"></a>5.4日期与时间类型</h4><table>
-<thead>
-<tr>
-<th align="left"><strong>类型名称</strong></th>
-<th align="left"><strong>日期格式</strong></th>
-<th align="left"><strong>字节数</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">YEAR</td>
-<td align="left">yyyy</td>
-<td align="left">1个字节</td>
-</tr>
-<tr>
-<td align="left">TIME</td>
-<td align="left">HH:mm:ss</td>
-<td align="left">3个字节</td>
-</tr>
-<tr>
-<td align="left">DATE</td>
-<td align="left">yyyy-MM-dd</td>
-<td align="left">3个字节</td>
-</tr>
-<tr>
-<td align="left">DATAETIME</td>
-<td align="left">yyyy-MM-dd HH:mm:ss</td>
-<td align="left">8个字节</td>
-</tr>
-<tr>
-<td align="left">TIMESTAMP</td>
-<td align="left">yyyy-MM-dd HH:mm:ss</td>
-<td align="left">4个字节</td>
-</tr>
-</tbody></table>
-<p><strong>注意</strong>：日期和时间既可以用字符串设置也可以用数值设置，当时即使它们输入的内容是一致的，它们代表的含义可能不同。   </p>
-<h2 id="6-SQL语法"><a href="#6-SQL语法" class="headerlink" title="6.SQL语法"></a>6.SQL语法</h2><h4 id="6-1DDL"><a href="#6-1DDL" class="headerlink" title="6.1DDL"></a>6.1DDL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名称 character set utf8   //创建数据库名称并设置字符</span><br><span class="line">drop database 数据库名称    //删除数据库</span><br><span class="line"></span><br><span class="line">//创建表</span><br><span class="line">create table student(</span><br><span class="line">    sid int(11) not null comment &apos;学生id&apos;,</span><br><span class="line">    sname varchar(30) comment &apos;学生姓名&apos;,</span><br><span class="line">    sage int(3) comment &apos;学生年龄&apos;  //注意这里不能有逗号</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">//修改</span><br><span class="line">alter table student add column score int(11); // 向学生表增加一列分数</span><br><span class="line">alter table student modify column score int(4); //修改学生表的数据类型</span><br><span class="line">alter table student drop sage;  //删除学生表年龄的那一列</span><br><span class="line">alter table 旧表名 rename to 新表名;    //修改表名</span><br><span class="line">alter table 表名 change 旧字段名 新字段名 新数据类型;   //修改字段名</span><br><span class="line">alter table 表名 modify 字段1 数据类型 after 字段2; //修改字段顺序，将字段1添加到字段2的后面</span><br><span class="line">alter table 表名 engine=更改后的存储引擎名; //更改引擎名</span><br><span class="line">alter table 表名 drop foreign key 外键约束名;   //删除表的外键约束</span><br><span class="line">alter table 表名 [IF EXISTS] 表1，表2，...;     //删除没有被关联的表</span><br><span class="line"></span><br><span class="line">rename table student to student1;   //重命名学生表为student1</span><br><span class="line">truncate table 表名;    //可以清空表，也就是删除所有行</span><br><span class="line">create table 新表名 select * from student;  //将一个表的内容插入到一个新表当中</span><br><span class="line">desc 表名   //查看现有字段信息</span><br><span class="line">show create table 表名  //查看表详细结构</span><br><span class="line">show databases; //查看数据库</span><br><span class="line">use mysql 数据库名;     //切换数据库</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-2DML"><a href="#6-2DML" class="headerlink" title="6.2DML"></a>6.2DML</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// insert插入数据</span><br><span class="line">insert into student values(01, &apos;小明&apos;, 11);</span><br><span class="line">insert into student values(02, &apos;小红&apos;, 9), (03, &apos;小刚&apos;, 12);</span><br><span class="line">insert into student (sid, sname) values(04, &apos;小红&apos;);</span><br><span class="line">insert into 表名(col1, col2) select (col1, col2) from 表名; //插入检索出来的数据</span><br><span class="line"></span><br><span class="line">// update</span><br><span class="line">update student set score = 0;   //全表把分数这一列都修改为0</span><br><span class="line">update student set sname = &apos;学霸&apos;, score = score + 20 where sid = 1;    //把id为1的学生姓名改为学霸，并且在原有的分数加20</span><br><span class="line"></span><br><span class="line">// delete</span><br><span class="line">delete from student;</span><br><span class="line">delete from student where sid = i;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-3DQL"><a href="#6-3DQL" class="headerlink" title="6.3DQL"></a>6.3DQL</h4><ul>
-<li>=, &lt;, &gt;, &lt;=, &gt;=, &lt;&gt;!=, between…and, in(set), not in, is null, and, or, ()</li>
-</ul>
-<p><strong>单表查询</strong><br>`select 属性列表  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from student;  //返回表中所有的列</span><br><span class="line">select * from student where sid = 1 or id = 2 or id = 3...;  //查询学号为1，2， 3,...的记录</span><br><span class="line">select * from student where sid in(1, 2, 3,...);  //查询学号为1，2， 3,...的记录</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意</strong>: is null 不等于空字符</p>
-<h2 id="7-主键与外键"><a href="#7-主键与外键" class="headerlink" title="7.主键与外键"></a>7.主键与外键</h2><p> <strong>7.1主键约束</strong>：要求键列的数据唯一，并且不允许为空。主键分为单字段主键和多字段主键</p>
-<ul>
-<li><p>单字段主键格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 在定义列的同时指定主键</span><br><span class="line">CREATE TABLE tb_employee2(</span><br><span class="line">    id INT(11) PRIMARY KEY,</span><br><span class="line">    nameO VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAR</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 在定义完所有的列后指定主键</span><br><span class="line">CREATE TABLE tb_employee3(</span><br><span class="line">    id INT(11) ,</span><br><span class="line">    nameO VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAR，</span><br><span class="line">    [CONSTRAINT &lt;约束名&gt;] PRIMARY KEY(id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+        <h2 id="1-String、StringBuffer和StringBuilder有什么区别"><a href="#1-String、StringBuffer和StringBuilder有什么区别" class="headerlink" title="1.String、StringBuffer和StringBuilder有什么区别"></a>1.String、StringBuffer和StringBuilder有什么区别</h2><ul>
+<li><p>String和StringBuffer、StringBuilder的区别在于String声明的是不可变的对象，每次操作都会生成新的String对象，然后将指针指向新的String对象，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = &quot;jvm&quot;;</span><br><span class="line">s += 890;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>多字段联合主键</p>
+<li><p>Jvm解析：首先创建对象s指向字符常量池”jvm”，然后创建一个新的对象s指向”jvm890”，而原来的对象则会变成垃圾被GC回收。     </p>
+</li>
+<li><p>而StringBuffer, StringBuilder可以在原有的对象基础上操作，每当我们用它对字符串做操作时，实际上是在同一个对象上操作的，所以在经常改变字符串内容的情况下不要使用String。</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tb_employee4(</span><br><span class="line">    id INT(11) ,</span><br><span class="line">    nameO VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAR,</span><br><span class="line">    PRIMARY KEY(name, id)</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>StringBuffer</strong>: 线程安全，但执行效率低一点，一般在多线程使用。<br><strong>StringBuilder</strong>: 非线程安全，但执行效率高，一般用在多线程。</p>
+<h2 id="2-和equals的区别是什么"><a href="#2-和equals的区别是什么" class="headerlink" title="2.==和equals的区别是什么"></a>2.==和equals的区别是什么</h2><p><strong>==</strong>对于基本类型和引用类型==的作用是不相同的。<br><strong>基本类型</strong>：比较的是值是否相同。<br><strong>引用类型</strong>：比较的是”是否为同一个对象”，包括地址和数值都要相同才相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String x = &quot;string&quot;;</span><br><span class="line">String y = &quot;string&quot;;</span><br><span class="line">System.out.println(x == y); //true</span><br><span class="line"></span><br><span class="line">String a = new String(&quot;string&quot;);</span><br><span class="line">String b = new String(&quot;string&quot;);</span><br><span class="line">System.out.println(a == b); //false</span><br><span class="line">System.out.println(a == x); //false</span><br><span class="line">System.out.println(a.equals(x));  //true</span><br></pre></td></tr></table></figure>
 
-
-<p><strong>7.2外键约束</strong>：外键约束的主要作用是保证数据引用的完整性，定义外键后，不允许删除在另一个表中具有想关联的行。<br>语法规则：<br><code>[CONSTRAINT &lt;外键名&gt;] FROEIGN KEY 字段名1 REFERENCES &lt;主表名&gt; 主键列1</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">CREATE TABLE tb_dept1(</span><br><span class="line">    id INT(11) PRIMARY ID,</span><br><span class="line">    name VARCHAR(22) NOT NULL,</span><br><span class="line">    location VARCHAR(50)</span><br><span class="line">);</span><br><span class="line">CREATE TABLE tb_employee5(</span><br><span class="line">    id INT(11) PRIMARY KEY,</span><br><span class="line">    name VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAT,</span><br><span class="line">    CONSTRAINT fk_emp_deptid FOREIGN KEY(deptid) REFERENCES tb_deptid(id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意</strong>：从表的外键必须关联主表的主键，并且关联字段的数据类型必须匹配。</p>
-<h2 id="8-三大范式"><a href="#8-三大范式" class="headerlink" title="8.三大范式"></a>8.三大范式</h2><h4 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h4><ul>
-<li>第一范式是第二范式和第三范式的基础，它包含下列指导原则<br>(1) 数据组的每个属性只可以包含一个值。<br>(2) 关系中的每个数组必须包含相同数量的值。<br>(3) 关系中的每一个数组一定不能相同。<br>简单的来说就是表中的所有属性都是不可再分解的原子值，那么这个表就属于第一范式原则。</li>
+<p><strong>equals</strong>一般比较的时引用字符串对象里包含的字符序列是否完全相同。然而Object提供的equals()只是比较对象的数组，本质上Object类上的equals方法比较<strong>引用对象</strong>的结果与==运算比较<strong>引用对象</strong>的结果是完全一致的。只是String重写了Object的equals方法，把引用比较改成了值(只是单纯的字符序列，没有包括内存地址）比较。<br><strong>提示</strong>: String x = “string”和String x = new String(“string”)是不一样的。String x = “string”的方式，Java虚拟机会将其分配到常量池当中，而String x = new String(“string”)则会被分配到堆内存中</p>
+<h2 id="3-hashCode和equals"><a href="#3-hashCode和equals" class="headerlink" title="3.hashCode和equals"></a>3.hashCode和equals</h2><p><strong>为什么要有hashCode</strong>    </p>
+<ul>
+<li>以HashSet为例，当把对象加入HashSet时，HashSet会先计算对象的hashCode值来判断对象加入的位置，同时也会与其他已经加入的对象的hashCode值作比较，如果没有相同的hashCode, HashSet就会假设对象没有重复出现(因为hashCode不相同，一定不是同一个对象, 但是hashCode相同的不一定是同一个对象, 还需要用equals比较才能确定)。但是如果发现有相同的hashCode值的对象，这时会调用equals()方法来检查hashCode相等的对象是否会真的相同。如果两者相同，HashSet就不会让其加入操作。   </li>
 </ul>
-<h4 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h4><p>- </p>
+<p><strong>两个对象的hashCode()相同，则equals()也一定为true，对吗？</strong>   </p>
+<ul>
+<li>答案是错误的，两个对象的hashCode()相同，equals()不一定为true。例如：<pre><code>String str1 = &quot;通话&quot;;
+String str2 = &quot;重地&quot;;
+System.out.println(&quot;str1:%d|str2:%d&quot;, str1.hashCode(), str2.hashCode());
+System.out.println(str1.equals(str2));</code></pre>上面运行的结果是：<br>str1: 1179395 | str2:1179395<br>false</li>
+</ul>
 
       
     </div>
@@ -679,7 +518,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -692,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/24/数据结构与算法/" rel="next" title="LeetCode">
-                <i class="fa fa-chevron-left"></i> LeetCode
+              <a href="/2019/07/28/跟随技术胖学Flutter/" rel="next" title="跟随技术胖学Flutter">
+                <i class="fa fa-chevron-left"></i> 跟随技术胖学Flutter
               </a>
             
           </div>
@@ -701,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/28/跟随技术胖学Flutter/" rel="prev" title="跟随技术胖学Flutter">
-                跟随技术胖学Flutter <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -876,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql开始使用"><span class="nav-number">1.</span> <span class="nav-text">1.mysql开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-mysql的登录命令如下"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 mysql的登录命令如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-mysql已存在的数据库："><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 mysql已存在的数据库：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-存储引擎分类"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3 存储引擎分类</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2-有关数据库的一些概念"><span class="nav-number">2.</span> <span class="nav-text">2.有关数据库的一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-逻辑模型的结构分类"><span class="nav-number">3.</span> <span class="nav-text">3.逻辑模型的结构分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-关系模型中的常见术语"><span class="nav-number">4.</span> <span class="nav-text">4.关系模型中的常见术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-mysql数据类型"><span class="nav-number">5.</span> <span class="nav-text">5.mysql数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1整数数据类型"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1整数数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2浮点数类型"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2浮点数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3字符串类型"><span class="nav-number">5.0.3.</span> <span class="nav-text">5.3字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4日期与时间类型"><span class="nav-number">5.0.4.</span> <span class="nav-text">5.4日期与时间类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-SQL语法"><span class="nav-number">6.</span> <span class="nav-text">6.SQL语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1DDL"><span class="nav-number">6.0.1.</span> <span class="nav-text">6.1DDL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2DML"><span class="nav-number">6.0.2.</span> <span class="nav-text">6.2DML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3DQL"><span class="nav-number">6.0.3.</span> <span class="nav-text">6.3DQL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-主键与外键"><span class="nav-number">7.</span> <span class="nav-text">7.主键与外键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-三大范式"><span class="nav-number">8.</span> <span class="nav-text">8.三大范式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一范式"><span class="nav-number">8.0.1.</span> <span class="nav-text">第一范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二范式"><span class="nav-number">8.0.2.</span> <span class="nav-text">第二范式</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-String、StringBuffer和StringBuilder有什么区别"><span class="nav-number">1.</span> <span class="nav-text">1.String、StringBuffer和StringBuilder有什么区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-和equals的区别是什么"><span class="nav-number">2.</span> <span class="nav-text">2.==和equals的区别是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-hashCode和equals"><span class="nav-number">3.</span> <span class="nav-text">3.hashCode和equals</span></a></li></ol></div>
             
 
           </div>
