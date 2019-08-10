@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/touxiang.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mysql,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.mysql开始使用1.1 mysql的登录命令如下mysql -h localhost -r root -p提示 mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码 1.2 mysql已存在的数据库：information_scheme: 存储元">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL语法知识总结">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/MySQL语法知识总结/index.html">
+<meta property="og:site_name" content="Keith&#39;Blog">
+<meta property="og:description" content="1.mysql开始使用1.1 mysql的登录命令如下mysql -h localhost -r root -p提示 mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码 1.2 mysql已存在的数据库：information_scheme: 存储元">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-10T17:12:23.003Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL语法知识总结">
+<meta name="twitter:description" content="1.mysql开始使用1.1 mysql的登录命令如下mysql -h localhost -r root -p提示 mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码 1.2 mysql已存在的数据库：information_scheme: 存储元">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/24/MySQL语法知识总结/">
+
+
+
+
+
+  <title>MySQL语法知识总结 | Keith'Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/choi-keith" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Keith'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/MySQL语法知识总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="keith choi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keith'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL语法知识总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-24T23:21:06+08:00">
+                2019-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-mysql开始使用"><a href="#1-mysql开始使用" class="headerlink" title="1.mysql开始使用"></a>1.mysql开始使用</h2><h4 id="1-1-mysql的登录命令如下"><a href="#1-1-mysql的登录命令如下" class="headerlink" title="1.1 mysql的登录命令如下"></a>1.1 mysql的登录命令如下</h4><p><code>mysql -h localhost -r root -p</code><br><strong>提示</strong> mysql为登录命令，-h后面是服务器的主机地址， 如果客户端和服务器在同一台机器上，host可以是localhost或IP地址，-u后面跟登录数据库的用户名称， 在这里是root，-p后面是登录密码</p>
+<h4 id="1-2-mysql已存在的数据库："><a href="#1-2-mysql已存在的数据库：" class="headerlink" title="1.2 mysql已存在的数据库："></a>1.2 mysql已存在的数据库：</h4><p><strong>information_scheme</strong>: 存储元数据库，数据库对象信息，如用户信息，列信息，字符，分区等<br><strong>performance_sheme</strong>: 存储数据库服务性能参数<br><strong>mysql</strong>: 存储数据库用户权限信息<br><strong>sys</strong>: 能够快速获取谁用了多少资源，有谁连接过</p>
+<h4 id="1-3-存储引擎分类"><a href="#1-3-存储引擎分类" class="headerlink" title="1.3 存储引擎分类"></a>1.3 存储引擎分类</h4><p><strong>MyISAM</strong>: MyISAM拥有较高的插入、查询速度，但不支持事务，常用在web、数据仓储和其他应用环境下最常使用的存储引擎之一，在mysql5.5之前的版本中作为默认存储引擎。<br><strong>INNODB</strong>: InnerDB是事务型数据库的首选引擎，支持事务安全表，支持行锁定和外键，是mysql5.5之后的默认存储引擎。<br><strong>MEMORY</strong>: 内存型，访问速度非常快，但是不安全。</p>
+<h2 id="2-有关数据库的一些概念"><a href="#2-有关数据库的一些概念" class="headerlink" title="2.有关数据库的一些概念"></a>2.有关数据库的一些概念</h2><h2 id="3-逻辑模型的结构分类"><a href="#3-逻辑模型的结构分类" class="headerlink" title="3.逻辑模型的结构分类"></a>3.逻辑模型的结构分类</h2><p><strong>3.1层次模型</strong>：层次模型是用属性结构来表示各类实体以及实体之间的联系。<br><strong>3.2网状模型</strong>: 网状模型是用图形结构来表示各类实体以及实体之间的联系。<br><strong>3.3关系模型</strong>: 关系模型是用二维表结构来表示各类实体以及实体之间的联系。<br><strong>3.4面向对象模型</strong>：面向对象模型是用面向对象的观点来描述现实世界实体(对象)的逻辑组织、对象间相知和联系的模型。   </p>
+<h2 id="4-关系模型中的常见术语"><a href="#4-关系模型中的常见术语" class="headerlink" title="4.关系模型中的常见术语"></a>4.关系模型中的常见术语</h2><p><strong>关系</strong>：对应通常所说的一张表。<br><strong>元组</strong>：表中的一行即为一个元组。<br><strong>属性</strong>: 表中的一列即为一个属性。<br><strong>主键</strong>：表中的某个属性组，它可以唯一确定一个元组。<br><strong>域</strong>：列的取值范围成为域。<br><strong>分量</strong>：元组中的一个属性值。<br><strong>关系模式</strong>：对关系中的描述。</p>
+<p><strong>键的分类</strong>：   </p>
+<ul>
+<li>超键：在一个关系中，能唯一标识元组的属性或属性集称为关系的超键。</li>
+<li>候选键：如果一个属性集能唯一标识元组，且又不含有多余的属性，那么这个键称为关系的候选键。</li>
+<li>主键：如果一个关系中有多个候选键，则选择其中的一个键为关系的主键。</li>
+<li>外键： 如果一个关系表R中包含另一个关系表S的主键所对应的属性组F，则称此属性组F为关系表R的外键，并称关系表S为参照建，关系表R是依赖关系。</li>
+</ul>
+<h2 id="5-mysql数据类型"><a href="#5-mysql数据类型" class="headerlink" title="5.mysql数据类型"></a>5.mysql数据类型</h2><h4 id="5-1整数数据类型"><a href="#5-1整数数据类型" class="headerlink" title="5.1整数数据类型"></a>5.1整数数据类型</h4><table>
+<thead>
+<tr>
+<th align="left"><strong>数据类型</strong></th>
+<th align="left"><strong>字节数</strong></th>
+<th align="left"><strong>有符号数取值范围</strong></th>
+<th align="left"><strong>无符号数取值范围</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">TINYINT</td>
+<td align="left">1个字节</td>
+<td align="left">-128~127</td>
+<td align="left">0~256</td>
+</tr>
+<tr>
+<td align="left">SMALLINT</td>
+<td align="left">2个字节</td>
+<td align="left">-32768~32767</td>
+<td align="left">0~65535</td>
+</tr>
+<tr>
+<td align="left">MEDIUMINT</td>
+<td align="left">3个字节</td>
+<td align="left">-8388608~8388607</td>
+<td align="left">0~16777215</td>
+</tr>
+<tr>
+<td align="left">INT</td>
+<td align="left">4个字节</td>
+<td align="left">-2147483648~214783647</td>
+<td align="left">0~4294967295</td>
+</tr>
+<tr>
+<td align="left">BIGINT</td>
+<td align="left">5个字节</td>
+<td align="left">-9223372036854775808~9223372036854775807</td>
+<td align="left">0~18446744073709551615</td>
+</tr>
+</tbody></table>
+<p><strong>提示</strong>：mysql支持在类型后面的括号指定该类型的显示宽度，例如INT(M)进行设置，其中M指示最大显示宽度<br><strong>注意</strong>：显示宽度与存储数据的大小无关。数值的个数如果小于指定的宽度是，显示会由空格填充；如果插入了大于显示宽度的值，只要该值不超过该类型整数的取值范围，数据依然可以插入，而且还准确无误。</p>
+<h4 id="5-2浮点数类型"><a href="#5-2浮点数类型" class="headerlink" title="5.2浮点数类型"></a>5.2浮点数类型</h4><table>
+<thead>
+<tr>
+<th align="left"><strong>类型名称</strong></th>
+<th align="left"><strong>字节数</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">FLOAT</td>
+<td align="left">4个字节</td>
+</tr>
+<tr>
+<td align="left">DOUBLE</td>
+<td align="left">8个字节</td>
+</tr>
+<tr>
+<td align="left">DECIMAL(M, D),DEC</td>
+<td align="left">M+2个字节</td>
+</tr>
+</tbody></table>
+<p><strong>提示</strong>：(M, D)，M表示总共的位数，D表示小数的位数，默认M值为10， D值为0；它的最大取值范围不是固定的，而是由M来决定的。<br><strong>注意</strong>：数据库一般用DECIMAL来存储数据，因为浮点数在进行加减法运算和比较的时候很容易出现精度问题</p>
+<h4 id="5-3字符串类型"><a href="#5-3字符串类型" class="headerlink" title="5.3字符串类型"></a>5.3字符串类型</h4><table>
+<thead>
+<tr>
+<th align="left"><strong>类型名称</strong></th>
+<th align="left"><strong>字符长度</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">CHAR</td>
+<td align="left">0~255个字符</td>
+</tr>
+<tr>
+<td align="left">VARCHAR</td>
+<td align="left">0~65535个字符</td>
+</tr>
+<tr>
+<td align="left">TINYTEXT</td>
+<td align="left">(2^8 - 1)个字符</td>
+</tr>
+<tr>
+<td align="left">TEXT</td>
+<td align="left">(2^16 - 1)个字符</td>
+</tr>
+<tr>
+<td align="left">MEDIUMTEXT</td>
+<td align="left">(2^24 - 1)个字符</td>
+</tr>
+<tr>
+<td align="left">LONGTEXT</td>
+<td align="left">(2^32 - 1)个字符</td>
+</tr>
+<tr>
+<td align="left">SET</td>
+<td align="left">set最大可以由64个成员</td>
+</tr>
+</tbody></table>
+<p><strong>提示</strong>：CHAR和VARCHAR的区别<br>char: char为固定长度，在定义时指定字符串长度，如果输入的字符数小于指定的字符数，则系统会自动在左边用空格补全，它的存储长度在定义时就已经固定下来了。<br>varchar: varchar的长度时可变的，在定义的范围内，输入多少个字符，它就有多少个字符。它的存储长度是在输入时固定下来的。</p>
+<h4 id="5-4日期与时间类型"><a href="#5-4日期与时间类型" class="headerlink" title="5.4日期与时间类型"></a>5.4日期与时间类型</h4><table>
+<thead>
+<tr>
+<th align="left"><strong>类型名称</strong></th>
+<th align="left"><strong>日期格式</strong></th>
+<th align="left"><strong>字节数</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">YEAR</td>
+<td align="left">yyyy</td>
+<td align="left">1个字节</td>
+</tr>
+<tr>
+<td align="left">TIME</td>
+<td align="left">HH:mm:ss</td>
+<td align="left">3个字节</td>
+</tr>
+<tr>
+<td align="left">DATE</td>
+<td align="left">yyyy-MM-dd</td>
+<td align="left">3个字节</td>
+</tr>
+<tr>
+<td align="left">DATAETIME</td>
+<td align="left">yyyy-MM-dd HH:mm:ss</td>
+<td align="left">8个字节</td>
+</tr>
+<tr>
+<td align="left">TIMESTAMP</td>
+<td align="left">yyyy-MM-dd HH:mm:ss</td>
+<td align="left">4个字节</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>：日期和时间既可以用字符串设置也可以用数值设置，当时即使它们输入的内容是一致的，它们代表的含义可能不同。   </p>
+<h2 id="6-SQL语法"><a href="#6-SQL语法" class="headerlink" title="6.SQL语法"></a>6.SQL语法</h2><h4 id="6-1DDL"><a href="#6-1DDL" class="headerlink" title="6.1DDL"></a>6.1DDL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名称 character set utf8   //创建数据库名称并设置字符</span><br><span class="line">drop database 数据库名称    //删除数据库</span><br><span class="line"></span><br><span class="line">//创建表</span><br><span class="line">create table student(</span><br><span class="line">    sid int(11) not null comment &apos;学生id&apos;,</span><br><span class="line">    sname varchar(30) comment &apos;学生姓名&apos;,</span><br><span class="line">    sage int(3) comment &apos;学生年龄&apos;  //注意这里不能有逗号</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">//修改</span><br><span class="line">alter table student add column score int(11); // 向学生表增加一列分数</span><br><span class="line">alter table student modify column score int(4); //修改学生表的数据类型</span><br><span class="line">alter table student drop sage;  //删除学生表年龄的那一列</span><br><span class="line">alter table 旧表名 rename to 新表名;    //修改表名</span><br><span class="line">alter table 表名 change 旧字段名 新字段名 新数据类型;   //修改字段名</span><br><span class="line">alter table 表名 modify 字段1 数据类型 after 字段2; //修改字段顺序，将字段1添加到字段2的后面</span><br><span class="line">alter table 表名 engine=更改后的存储引擎名; //更改引擎名</span><br><span class="line">alter table 表名 drop foreign key 外键约束名;   //删除表的外键约束</span><br><span class="line">alter table 表名 [IF EXISTS] 表1，表2，...;     //删除没有被关联的表</span><br><span class="line"></span><br><span class="line">rename table student to student1;   //重命名学生表为student1</span><br><span class="line">truncate table 表名;    //可以清空表，也就是删除所有行</span><br><span class="line">create table 新表名 select * from student;  //将一个表的内容插入到一个新表当中</span><br><span class="line">desc 表名   //查看现有字段信息</span><br><span class="line">show create table 表名  //查看表详细结构</span><br><span class="line">show databases; //查看数据库</span><br><span class="line">use mysql 数据库名;     //切换数据库</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-2DML"><a href="#6-2DML" class="headerlink" title="6.2DML"></a>6.2DML</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// insert插入数据</span><br><span class="line">insert into student values(01, &apos;小明&apos;, 11);</span><br><span class="line">insert into student values(02, &apos;小红&apos;, 9), (03, &apos;小刚&apos;, 12);</span><br><span class="line">insert into student (sid, sname) values(04, &apos;小红&apos;);</span><br><span class="line">insert into 表名(col1, col2) select (col1, col2) from 表名; //插入检索出来的数据</span><br><span class="line"></span><br><span class="line">// update</span><br><span class="line">update student set score = 0;   //全表把分数这一列都修改为0</span><br><span class="line">update student set sname = &apos;学霸&apos;, score = score + 20 where sid = 1;    //把id为1的学生姓名改为学霸，并且在原有的分数加20</span><br><span class="line"></span><br><span class="line">// delete</span><br><span class="line">delete from student;</span><br><span class="line">delete from student where sid = i;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-3DQL"><a href="#6-3DQL" class="headerlink" title="6.3DQL"></a>6.3DQL</h4><ul>
+<li>见数据库MySQL之DQL</li>
+</ul>
+<h2 id="7-主键与外键"><a href="#7-主键与外键" class="headerlink" title="7.主键与外键"></a>7.主键与外键</h2><p> <strong>7.1主键约束</strong>：要求键列的数据唯一，并且不允许为空。主键分为单字段主键和多字段主键</p>
+<ul>
+<li><p>单字段主键格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 在定义列的同时指定主键</span><br><span class="line">CREATE TABLE tb_employee2(</span><br><span class="line">    id INT(11) PRIMARY KEY,</span><br><span class="line">    nameO VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAR</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 在定义完所有的列后指定主键</span><br><span class="line">CREATE TABLE tb_employee3(</span><br><span class="line">    id INT(11) ,</span><br><span class="line">    nameO VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAR，</span><br><span class="line">    [CONSTRAINT &lt;约束名&gt;] PRIMARY KEY(id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多字段联合主键</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tb_employee4(</span><br><span class="line">    id INT(11) ,</span><br><span class="line">    nameO VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAR,</span><br><span class="line">    PRIMARY KEY(name, id)</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>7.2外键约束</strong>：外键约束的主要作用是保证数据引用的完整性，定义外键后，不允许删除在另一个表中具有想关联的行。<br>语法规则：<br><code>[CONSTRAINT &lt;外键名&gt;] FROEIGN KEY 字段名1 REFERENCES &lt;主表名&gt; 主键列1</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">CREATE TABLE tb_dept1(</span><br><span class="line">    id INT(11) PRIMARY ID,</span><br><span class="line">    name VARCHAR(22) NOT NULL,</span><br><span class="line">    location VARCHAR(50)</span><br><span class="line">);</span><br><span class="line">CREATE TABLE tb_employee5(</span><br><span class="line">    id INT(11) PRIMARY KEY,</span><br><span class="line">    name VARCHAR(25),</span><br><span class="line">    deptid INT(11),</span><br><span class="line">    salary FLOAT,</span><br><span class="line">    CONSTRAINT fk_emp_deptid FOREIGN KEY(deptid) REFERENCES tb_deptid(id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：从表的外键必须关联主表的主键，并且关联字段的数据类型必须匹配。</p>
+<h2 id="8-三大范式"><a href="#8-三大范式" class="headerlink" title="8.三大范式"></a>8.三大范式</h2><h4 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h4><ul>
+<li>第一范式是第二范式和第三范式的基础，它包含下列指导原则<br>(1) 数据组的每个属性只可以包含一个值。<br>(2) 关系中的每个数组必须包含相同数量的值。<br>(3) 关系中的每一个数组一定不能相同。<br>简单的来说就是表中的所有属性都是不可再分解的原子值，那么这个表就属于第一范式原则。</li>
+</ul>
+<h4 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h4><ul>
+<li>第二范式要求数据库表中的每个实例或行必须可以被唯一区分。</li>
+</ul>
+<h4 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h4><ul>
+<li>第三范式要求数据不能存在传递，非主键字段不能相互依赖    </li>
+</ul>
+<p><strong>总结</strong>：简单的来说就是第一范式就是原子性，要求字段不能再分；第二范式就是完全依赖，没有部分依赖；第三范式就是没有传递依赖</p>
+<h2 id="9-完整性"><a href="#9-完整性" class="headerlink" title="9.完整性"></a>9.完整性</h2><h4 id="9-1实体完整性"><a href="#9-1实体完整性" class="headerlink" title="9.1实体完整性"></a>9.1实体完整性</h4><ul>
+<li>数据库的一行就是实体。<strong>实体完整性</strong>是指主键约束、唯一约束、自动增长序列、联合主键等，它的作用是标志每一行数据不重复。</li>
+</ul>
+<h4 id="9-2域完整性"><a href="#9-2域完整性" class="headerlink" title="9.2域完整性"></a>9.2域完整性</h4><ul>
+<li><strong>域完整性</strong>是以单元格为单位进行约束，针对当前单元格的数据，也称列完整性。域完整性的约束有数据类型上的约束、非空约束(not null)和默认值约束(default)等。</li>
+</ul>
+<h4 id="9-3参照约束"><a href="#9-3参照约束" class="headerlink" title="9.3参照约束"></a>9.3参照约束</h4><ul>
+<li><strong>参照约束</strong>是值表与表之间的对应关系，通常可以建立两表之间的主键，外键关系，或编写两表的触发器来实现。操作有引用关系的数据表格过程中，对其一表格做插入、更新、删除等操作是，系统都会将被修改表格与另一张表格进行参照，从而阻止一些不正确操作。</li>
+</ul>
+<h2 id="10-视图"><a href="#10-视图" class="headerlink" title="10.视图"></a>10.视图</h2><p><strong>10.1视图</strong>是一个虚拟表，其内容由查询产生，与真实的表一样，包含行和列，行和列的数据来自定义视图的查询所引用的表，并且在引用视图时动态生成。<br><strong>10.2视图特性</strong>：不存储具体的数据，可以跟基本表一样，进行增删改查，一般用作查询。<br><strong>10.3语法</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create [algorithm = &#123;undefined | merge | template&#125;]</span><br><span class="line">view view_name as select column_name from table_name</span><br><span class="line">where codition [with [cascaded | local] check option]</span><br><span class="line"></span><br><span class="line">// 简单点就是</span><br><span class="line">create view 视图名 as select 列名1， 列名2，... from 表名 wehere 条件；</span><br><span class="line"></span><br><span class="line">// 删除视图</span><br><span class="line">drop view 表名</span><br></pre></td></tr></table></figure>
+
+<p><strong>10.4注释</strong>：    </p>
+<ul>
+<li>algorithm有三个值，分别为undefined、merge和template。undefined表示没有定义algorithm；merge表示处理方式为替换，可以惊醒更新表中的数据；template由于数据存在具体表中，所以不可以进行更改操作   </li>
+<li>with check option:更行数据时不能插入或更新不符合视图限制条件的记录</li>
+<li>local和cascaded: 可选参数，决定了检查测试范围，默认值为cascaded。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/24/数据结构与算法/" rel="next" title="LeetCode">
+                <i class="fa fa-chevron-left"></i> LeetCode
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/30/java基础一/" rel="prev" title="java基础一">
+                java基础一 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTg5OS8yMjQxMA"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="keith choi">
+            
+              <p class="site-author-name" itemprop="name">keith choi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/choi-keith" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql开始使用"><span class="nav-number">1.</span> <span class="nav-text">1.mysql开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-mysql的登录命令如下"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 mysql的登录命令如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-mysql已存在的数据库："><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 mysql已存在的数据库：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-存储引擎分类"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3 存储引擎分类</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2-有关数据库的一些概念"><span class="nav-number">2.</span> <span class="nav-text">2.有关数据库的一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-逻辑模型的结构分类"><span class="nav-number">3.</span> <span class="nav-text">3.逻辑模型的结构分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-关系模型中的常见术语"><span class="nav-number">4.</span> <span class="nav-text">4.关系模型中的常见术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-mysql数据类型"><span class="nav-number">5.</span> <span class="nav-text">5.mysql数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1整数数据类型"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1整数数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2浮点数类型"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2浮点数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3字符串类型"><span class="nav-number">5.0.3.</span> <span class="nav-text">5.3字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4日期与时间类型"><span class="nav-number">5.0.4.</span> <span class="nav-text">5.4日期与时间类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-SQL语法"><span class="nav-number">6.</span> <span class="nav-text">6.SQL语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1DDL"><span class="nav-number">6.0.1.</span> <span class="nav-text">6.1DDL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2DML"><span class="nav-number">6.0.2.</span> <span class="nav-text">6.2DML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3DQL"><span class="nav-number">6.0.3.</span> <span class="nav-text">6.3DQL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-主键与外键"><span class="nav-number">7.</span> <span class="nav-text">7.主键与外键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-三大范式"><span class="nav-number">8.</span> <span class="nav-text">8.三大范式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一范式"><span class="nav-number">8.0.1.</span> <span class="nav-text">第一范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二范式"><span class="nav-number">8.0.2.</span> <span class="nav-text">第二范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三范式"><span class="nav-number">8.0.3.</span> <span class="nav-text">第三范式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-完整性"><span class="nav-number">9.</span> <span class="nav-text">9.完整性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1实体完整性"><span class="nav-number">9.0.1.</span> <span class="nav-text">9.1实体完整性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2域完整性"><span class="nav-number">9.0.2.</span> <span class="nav-text">9.2域完整性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3参照约束"><span class="nav-number">9.0.3.</span> <span class="nav-text">9.3参照约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-视图"><span class="nav-number">10.</span> <span class="nav-text">10.视图</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">keith choi</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
