@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Keith&#39;Blog">
 <meta property="og:description" content="1.在javaScript中，基本数据类型有哪几种？null是对象类型的还是基本数据类型？它们是怎么存储的？ 基本数据类型有number, string, boolean, null, undefined, symbol(ES6新增的); null是对象类型，这是由于历史遗留的问题; 基本数据类型是存储于堆栈存的，引用数据类型是存储于堆内存的。 关于基本数据类型与引用类型的区别与数据类型的判断具体">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-18T15:50:36.673Z">
+<meta property="og:updated_time" content="2019-08-19T15:38:30.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第二次系统学js">
 <meta name="twitter:description" content="1.在javaScript中，基本数据类型有哪几种？null是对象类型的还是基本数据类型？它们是怎么存储的？ 基本数据类型有number, string, boolean, null, undefined, symbol(ES6新增的); null是对象类型，这是由于历史遗留的问题; 基本数据类型是存储于堆栈存的，引用数据类型是存储于堆内存的。 关于基本数据类型与引用类型的区别与数据类型的判断具体">
@@ -358,7 +358,8 @@
 <li>除了在全局作用域中的函数不能被删除，在对象(object)中的函数是能够用delete操作删除的。     </li>
 </ul>
 <p><strong>delete</strong>的详细用法见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/delete" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/delete</a></p>
-
+<h3 id="3-instanceof"><a href="#3-instanceof" class="headerlink" title="3.instanceof"></a>3.instanceof</h3><p>instanceof用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置。<br>详细用法见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Car(make, model, year) &#123;</span><br><span class="line">  this.make = make;</span><br><span class="line">  this.model = model;</span><br><span class="line">  this.year = year;</span><br><span class="line">&#125;</span><br><span class="line">var auto = new Car(&apos;Honda&apos;, &apos;Accord&apos;, 1998);</span><br><span class="line"></span><br><span class="line">console.log(auto instanceof Car);</span><br><span class="line">// expected output: true</span><br><span class="line"></span><br><span class="line">console.log(auto instanceof Object);</span><br><span class="line">// expected output: true</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -549,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在javaScript中，基本数据类型有哪几种？null是对象类型的还是基本数据类型？它们是怎么存储的？"><span class="nav-number">1.</span> <span class="nav-text">1.在javaScript中，基本数据类型有哪几种？null是对象类型的还是基本数据类型？它们是怎么存储的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-delete"><span class="nav-number">2.</span> <span class="nav-text">2.delete</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在javaScript中，基本数据类型有哪几种？null是对象类型的还是基本数据类型？它们是怎么存储的？"><span class="nav-number">1.</span> <span class="nav-text">1.在javaScript中，基本数据类型有哪几种？null是对象类型的还是基本数据类型？它们是怎么存储的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-delete"><span class="nav-number">2.</span> <span class="nav-text">2.delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-instanceof"><span class="nav-number">3.</span> <span class="nav-text">3.instanceof</span></a></li></ol></div>
             
 
           </div>
